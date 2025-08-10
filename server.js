@@ -61,7 +61,7 @@ app.post('/api/contacts', (req, res) => {
 app.get('/api/contacts', (req, res) => {
   db.all(`SELECT * FROM contacts`, [], (err, rows) => {
     if (err) return res.status(500).json({ error: err.message });
-    res.json('rows');
+    res.json(rows);
   });
 });
 
